@@ -12,8 +12,9 @@ import de.exxcellent.challenge.Table;
  *
  * @author Luca Nimmrichter <mail@nimmi.dev>
  * */
-public class CsvParser extends TableParser {
+public class CsvParser implements TableParser {
 
+    private InputStream inputStream;
     private String delimiter;
     private Table table = null;
 
@@ -22,7 +23,7 @@ public class CsvParser extends TableParser {
     }
 
     public CsvParser(InputStream inputStream, String delimiter){
-        super(inputStream);
+        this.inputStream = inputStream;
         this.delimiter = delimiter;
     }
 
